@@ -1,1 +1,865 @@
 
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leads Pro</title>
+
+    <link rel="icon" href="leads.jpg"/>
+
+    <style>
+
+        :root {
+
+            --azul: #0069c5;
+
+            --azul-escuro: #0063b9;
+
+            --bege: #f5f5dc;
+
+            --branco: #ffffff;
+
+            --preto: #333333;
+
+            --cinza: #f0f0f0;
+
+        }
+
+        
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        
+
+        body {
+
+            background-color: var(--branco);
+
+            color: var(--preto);
+
+            line-height: 1.6;
+
+        }
+
+        
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 15px;
+
+        }
+
+        
+
+        header {
+
+            background-color: var(--branco);
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index:80;
+
+        }
+
+        
+
+        nav {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 20px 0;
+
+        }
+
+        
+
+        .logo {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            color: var(--azul);
+
+        }
+
+        
+
+        .nav-links {
+
+            display: flex;
+
+            list-style: none;
+
+        }
+
+        
+
+        .nav-links li {
+
+            margin-left: 30px;
+
+        }
+
+        
+
+        .nav-links a {
+
+            text-decoration: none;
+
+            color: var(--preto);
+
+            font-weight: 500;
+
+            transition: color 0.3s;
+
+        }
+
+        
+
+        .nav-links a:hover {
+
+            color: var(--azul);
+
+        }
+
+        
+
+        .hero {
+
+            background: linear-gradient(135deg, var(--branco) 0%, var(--bege) 100%);
+
+            padding: 40px 0;
+
+            text-align: center;
+
+        }
+
+        
+
+        .hero-content {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+        
+
+        .hero-text {
+
+            flex: 1;
+
+            min-width: 300px;
+
+            padding: 20px;
+
+            text-align: left;
+
+        }
+
+        
+
+        .hero-text h1 {
+
+            font-size: 2.5rem;
+
+            color: var(--azul);
+
+            margin-bottom: 20px;
+
+        }
+
+        
+
+        .hero-text p {
+
+            font-size: 1.1rem;
+
+            color: var(--preto);
+
+            margin-bottom: 20px;
+
+        }
+
+        
+
+        .hero-image {
+
+            flex: 1;
+
+            min-width: 300px;
+
+            padding: 20px;
+
+        }
+
+        
+
+        .hero-image img {
+
+            width: 100%;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+        }
+
+        
+
+        .features {
+
+            padding: 80px 0;
+
+            background-color: var(--branco);
+
+        }
+
+        
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+
+        }
+
+        
+
+        .section-title h2 {
+
+            font-size: 2rem;
+
+            color: var(--azul);
+
+            margin-bottom: 15px;
+
+        }
+
+        
+
+        .section-title p {
+
+            color: var(--preto);
+
+            max-width: 700px;
+
+            margin: 0 auto;
+
+        }
+
+        
+
+        .features-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 30px;
+
+        }
+
+        
+
+        .feature-card {
+
+            background-color: var(--branco);
+
+            border-radius: 10px;
+
+            padding: 30px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+
+            transition: transform 0.3s;
+
+        }
+
+        
+
+        .feature-card:hover {
+
+            transform: translateY(-10px);
+
+        }
+
+        
+
+        .feature-card img {
+
+            width: 80px;
+
+            height: 80px;
+
+            margin-bottom: 20px;
+
+        }
+
+        
+
+        .feature-card h3 {
+
+            font-size: 1.3rem;
+
+            color: var(--azul);
+
+            margin-bottom: 15px;
+
+        }
+
+        
+
+        .feature-card p {
+
+            color: var(--preto);
+
+        }
+
+        
+
+        .metrics {
+
+            padding: 80px 0;
+
+            background-color: var(--bege);
+
+            text-align: center;
+
+        }
+
+
+
+        .metrics-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 30px;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .metric-item {
+
+            padding: 30px 20px;
+
+        }
+
+
+
+        .metric-number {
+
+            font-size: 3rem;
+
+            font-weight: bold;
+
+            color: var(--azul);
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .metric-label {
+
+            font-size: 1.1rem;
+
+            color: var(--preto);
+
+        }
+
+
+
+        .cta {
+
+            padding: 80px 0;
+
+            background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%);
+
+            color: var(--branco);
+
+            text-align: center;
+
+        }
+
+        
+
+        .cta h2 {
+
+            font-size: 2rem;
+
+            margin-bottom: 20px;
+
+        }
+
+        
+
+        .cta p {
+
+            max-width: 700px;
+
+            margin: 0 auto 30px;
+
+        }
+
+        
+
+        .btn {
+
+            display: inline-block;
+
+            background-color: var(--azul);
+
+            color: var(--branco);
+
+            padding: 12px 25px;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            font-weight: 500;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s;
+
+            text-decoration: none;
+
+        }
+
+        
+
+        .btn-light {
+
+            background-color: var(--branco);
+
+            color: var(--azul);
+
+        }
+
+        
+
+        .btn-light:hover {
+
+            background-color: var(--bege);
+
+        }
+
+        
+
+        footer {
+
+            background-color: var(--preto);
+
+            color: var(--branco);
+
+            padding: 50px 0 20px;
+
+        }
+
+        
+
+        .footer-content {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: space-between;
+
+            margin-bottom: 40px;
+
+        }
+
+        
+
+        .footer-column {
+
+            flex: 1;
+
+            min-width: 250px;
+
+            padding: 0 20px;
+
+            margin-bottom: 30px;
+
+        }
+
+        
+
+        .footer-column h3 {
+
+            color: var(--azul);
+
+            margin-bottom: 20px;
+
+            font-size: 1.2rem;
+
+        }
+
+        
+
+        .footer-column ul {
+
+            list-style: none;
+
+        }
+
+        
+
+        .footer-column ul li {
+
+            margin-bottom: 10px;
+
+        }
+
+        
+
+        .footer-column ul li a {
+
+            color: var(--branco);
+
+            text-decoration: none;
+
+            transition: color 0.3s;
+
+        }
+
+        
+
+        .footer-column ul li a:hover {
+
+            color: var(--azul);
+
+        }
+
+        
+
+        .copyright {
+
+            text-align: center;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,0.1);
+
+        }
+
+        
+
+        @media (max-width: 768px) {
+
+            .hero-content {
+
+                flex-direction: column;
+
+            }
+
+            
+
+            .hero-text, .hero-image {
+
+                text-align: center;
+
+            }
+
+            
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="container">
+
+            <nav>
+
+                <div class="logo">Leads Pro</div>
+
+                <ul class="nav-links">
+
+                    <li><a href="#home">Home</a></li>
+
+                    <li><a href="#features">Soluções</a></li>
+
+                    <li><a href="#metrics">Resultados</a></li>
+
+                    <li><a href="#contact">Contato</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="hero-text fade-in">
+
+                    <h1>Encontre Empresas Prontas para Negócio</h1>
+
+                    <p>Receba listas exclusivas com contatos de empresas do seu nicho, atualizadas e prontas para você entrar em contato.</p>
+
+                    <p>Pare de perder tempo pesquisando. Nós já fizemos o trabalho para você.</p>
+
+                </div>
+
+                <div class="hero-image fade-in">
+
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ecf99997-0487-423c-a69c-0e7b850181a7.png" alt="Equipe analisando listas de leads">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="features" id="features">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Nossas Soluções</h2>
+
+                <p>Oferecemos listas segmentadas e atualizadas de empresas como barbearias, clínicas, academias, restaurantes e muito mais. Você recebe os dados certos para focar no que importa: fechar negócios.</p>
+
+            </div>
+
+            <div class="features-grid">
+
+                <div class="feature-card fade-in">
+
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9f8ab07a-3cb4-4dec-a78b-8d7d5244d29a.png" alt="Funil de vendas">
+
+                    <h3>Leads Segmentados</h3>
+
+                    <p>Filtramos os contatos de acordo com o seu público-alvo, garantindo que cada lead seja realmente relevante para o seu negócio.</p>
+
+                </div>
+
+                <div class="feature-card fade-in" style="animation-delay: 0.2s;">
+
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/77f0b8c7-e415-4e22-8205-e887ea08835a.png" alt="Engrenagem de automação">
+
+                    <h3>Entrega Rápida</h3>
+
+                    <p>Você recebe sua lista em poucas horas, pronta para ser usada. Sem enrolação, sem burocracia.</p>
+
+                </div>
+
+                <div class="feature-card fade-in" style="animation-delay: 0.4s;">
+
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/18198abb-0418-4169-973b-6ab55ab36fbc.png" alt="Gráfico de crescimento">
+
+                    <h3>Dados Confiáveis</h3>
+
+                    <p>Trabalhamos apenas com informações verificadas para que você tenha segurança e aumente suas taxas de conversão.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="metrics" id="metrics">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Veja nossos resultados até agora</h2>
+
+                <p>Veja o impacto que nossas listas geram para nossos clientes.</p>
+
+            </div>
+
+            <div class="metrics-grid">
+
+                <div class="metric-item fade-in">
+
+                    <div class="metric-number">+1000</div>
+
+                    <div class="metric-label">Empresas conectadas</div>
+
+                </div>
+
+                <div class="metric-item fade-in" style="animation-delay: 0.2s;">
+
+                    <div class="metric-number">90%</div>
+
+                    <div class="metric-label">Satisfação dos clientes</div>
+
+                </div>
+
+                <div class="metric-item fade-in" style="animation-delay: 0.4s;">
+
+                    <div class="metric-number">+30</div>
+
+                    <div class="metric-label">Clientes atendidos</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2 class="fade-in">Pronto para falar com quem realmente importa?</h2>
+
+            <p class="fade-in">Receba agora mesmo sua lista segmentada de empresas e comece a gerar mais oportunidades de negócio ainda hoje.</p>
+
+            <a href="#home" class="btn btn-light fade-in" style="max-width: 300px; margin: 0 auto;">Quero Minha Lista</a>
+
+        </div>
+
+    </section>
+
+
+
+    <footer id="contact">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-column">
+
+                    <h3>Leads Pro</h3>
+
+                    <p>Conectamos empresas a oportunidades reais de negócio através de listas segmentadas e atualizadas.</p>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h3>Links Rápidos</h3>
+
+                    <ul>
+
+                        <li><a href="#home">Home</a></li>
+
+                        <li><a href="#features">Soluções</a></li>
+
+                        <li><a href="#metrics">Resultados</a></li>
+
+                        <li><a href="#contact">Contato</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h3>Contato</h3>
+
+                    <ul>
+
+                        <li>contato@leadspro.com.br</li>
+
+                        <li>(11) 97866-7888</li>
+
+                        <li>São Paulo - SP</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+
+                <p>© Leads Pro - Todos os direitos reservados.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+
